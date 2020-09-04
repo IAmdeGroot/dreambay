@@ -1,0 +1,61 @@
+.left-image {
+background-image: url('../assets/animation.jpg');
+height: 500px; /* You must set a specified height */
+width: 500px;
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.right-image {
+    background-image: url('../assets/camera.jpg');
+    height: 500px; /* You must set a specified height */
+    width: 500px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+@media screen and (min-width: 1200px) {
+    .image {
+        height: 40vh;
+    }
+    
+    .left-image {
+        margin-right: 5vh;
+    }
+    
+    .right-image {
+        position: absolute;
+        bottom: 20px;
+        margin-left: 20vh;
+    }
+    
+    .image-holder {
+        position: relative;
+    }
+    
+    .image-holder:hover .right-image {
+        animation: rightImageMove 1s linear;
+        animation-iteration-count: 1;
+        animation-fill-mode:forwards;
+    }
+    
+    .image-holder:hover .left-image {
+        animation: leftImageMove 1s linear;
+        animation-iteration-count: 1;
+        animation-fill-mode:forwards;
+    }
+}
+
+
+@keyframes rightImageMove {
+    from {margin-left: 20vh; bottom: 20px}
+    to {margin-left: 70vh; bottom: 0px}
+
+}
+
+@keyframes leftImageMove {
+    from {margin-right: 20vh}
+    to {margin-right: 70vh;}
+}
