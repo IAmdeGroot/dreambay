@@ -3,7 +3,7 @@ import Card from "./card";
 import Header from "./header";
 import Footer from "./footer";
 import Split from "./split";
-import logo from "./assets2/logo.png";
+import logo from "./assets/logo.png";
 import mountain3 from "./assets/mountain_3_00000.png"
 import mountain2 from "./assets/mountain_2_00000.png"
 import mountain1 from "./assets/mountain_1_00000.png"
@@ -84,15 +84,15 @@ function App() {
 
          {/* <h1 className="big-title translate" data-speed="0.1">Discover.</h1> */}
         <div style={{display: "flex", justifyContent: "center"}}>
-            <img style={{height: "300px", width: "300px", zIndex: "19", top: "200"}} src={logo} className="big-title translate" data-speed="-0.7"/>
+            <img style={{zIndex: "18"}} src={logo} className="big-title translate" data-speed="-0.7"/>
        </div>
 
-        <img src={cloud3} className="person translate" data-speed="0.1" alt=""/>
-        <img src={cloud2} className="mountain1 translate" data-speed="0.4" alt=""/>
-        <img src={cloud1} className="mountain2 translate" data-speed="-1.2" alt=""/>
-        <img src={cloud4} className="mountain3 translate" data-speed="-0.9" alt=""/>
+        <img src={moln1} className="person translate responsive-width" data-speed="0.1" alt=""/>
+        <img src={moln2} className="mountain1 translate responsive-width" data-speed="0.4" alt=""/>
+        <img src={moln3} className="mountain2 translate responsive-width" data-speed="0.2" alt=""/>
+        <img src={moln4} className="mountain3 translate responsive-width" data-speed="-0.9" alt=""/>
         {/* <img src="img/mountain_3_00000.png" className="mountain4 translate" data-speed="-0.25" alt=""/> */}
-        <img src={sky2} className="sky translate" data-speed="-0.25" alt=""/>
+        <img src={sky2} className="sky translate responsive-width" data-speed="-0.25" alt=""/>
         {/* <img src={cloud1} className="sky_two translate" data-speed="-0.25" alt=""/>
         <img src={cloud2} className="sky_three translate" data-speed="-0.25" alt=""/> */}
     </header>

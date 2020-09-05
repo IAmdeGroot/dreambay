@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './css/header.css'
-import logo from './assets/Dreambay_logo.png'
+import logo from './assets/logo.png'
 
 const Header = () => {
     return(
