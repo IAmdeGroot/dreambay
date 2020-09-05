@@ -3,10 +3,22 @@ import Card from "./card";
 import Header from "./header";
 import Footer from "./footer";
 import Split from "./split";
-import logo from "./assets/Dreambay_logo.png";
+import logo from "./assets2/logo.png";
 import mountain3 from "./assets/mountain_3_00000.png"
 import mountain2 from "./assets/mountain_2_00000.png"
 import mountain1 from "./assets/mountain_1_00000.png"
+import sky from "./assets/sky.png";
+import cloud1 from "./assets/cloud1.png";
+import cloud2 from "./assets/cloud2.png";
+import cloud3 from "./assets/cloud3.png";
+import cloud4 from "./assets/cloud4.png";
+
+import sky2 from "./assets2/Background.png";
+import moln1 from "./assets2/moln_1.png";
+import moln2 from "./assets2/moln_2.png";
+import moln3 from "./assets2/moln_3.png";
+import moln4 from "./assets2/moln_4.png";
+
 import MainSection from "./MainSection";
 import urlAnimationData from "./urlAnimationData.json";
 import urlFilmData from "./urlFilmData.json";
@@ -44,8 +56,8 @@ function App() {
             element.style.opacity = scroll / (sectionY.top + section_height);
         })
     
-        big_title.style.opacity = - scroll / (header_height / 1) + 1;
-        shadow.style.height = `${scroll * 0.5 + 300}px`;
+        // big_title.style.opacity = - scroll / (header_height / 1) + 1;
+        // shadow.style.height = `${scroll * 0.5 + 300}px`;
     
         content.style.transform = `translateY(${scroll / (section_height + sectionY.top) * 50 - 50}px)`;
         image_container.style.transform = `translateY(${scroll / (section_height + sectionY.top) * -20 + 50}px)`;
@@ -72,21 +84,21 @@ function App() {
 
          {/* <h1 className="big-title translate" data-speed="0.1">Discover.</h1> */}
         <div style={{display: "flex", justifyContent: "center"}}>
-            <img style={{height: "300px", width: "300px", zIndex: "15", top: "400"}} src={logo} className="big-title translate" data-speed="0.8"/>
+            <img style={{height: "300px", width: "300px", zIndex: "19", top: "200"}} src={logo} className="big-title translate" data-speed="-0.7"/>
        </div>
 
-        <img src={mountain1} className="person translate" data-speed="0.25" alt=""/>
-        <img src={mountain2} className="mountain1 translate" data-speed="0.3" alt=""/>
-        {/* <img src={mountain1} className="mountain2 translate" data-speed="-0.2" alt=""/> */}
-        {/* <img src="img/mountain_2_00000.png" className="mountain3 translate" data-speed="-0.21" alt=""/>
-        <img src="img/mountain_3_00000.png" className="mountain4 translate" data-speed="-0.25" alt=""/> */}
-        <img src={mountain3} className="sky translate" data-speed="-0.25" alt=""/>
-        <img src={mountain3} className="sky_two translate" data-speed="-0.25" alt=""/>
-        <img src={mountain3} className="sky_three translate" data-speed="-0.25" alt=""/>
+        <img src={cloud3} className="person translate" data-speed="0.1" alt=""/>
+        <img src={cloud2} className="mountain1 translate" data-speed="0.4" alt=""/>
+        <img src={cloud1} className="mountain2 translate" data-speed="-1.2" alt=""/>
+        <img src={cloud4} className="mountain3 translate" data-speed="-0.9" alt=""/>
+        {/* <img src="img/mountain_3_00000.png" className="mountain4 translate" data-speed="-0.25" alt=""/> */}
+        <img src={sky2} className="sky translate" data-speed="-0.25" alt=""/>
+        {/* <img src={cloud1} className="sky_two translate" data-speed="-0.25" alt=""/>
+        <img src={cloud2} className="sky_three translate" data-speed="-0.25" alt=""/> */}
     </header>
 
     <section>
-        <div className="shadow"></div>
+        {/* <div className="shadow"></div> */}
         <div className="container">
             <div className="content opacity mb-2">
                 <h3 className="title">
