@@ -1,26 +1,27 @@
 import React from "react";
 import Iframe from "react-iframe";
+import ResponsiveEmbed from "react-responsive-embed";
 
 const Card = (props) => {
   return (
-    <div className="col-md-6 col-lg-4 col-xs-12 my-5 img-fluid">
-      {/* <Iframe
-        url={props.url}
-        id="myId"
-        className="myClassname"
-        display="initial"
-        position="relative"
-        height="100%"
+    <div className="d-flex justify-content-center flex-column card_holder">
+      <iframe style={{margin: "0 15px 0 15 px", minWidth: "260px", minHeight: "260px" }}
+        src={props.url}
         width="100%"
-        allowFullScreen
-      /> */}
-      <iframe 
+        height="100%"
+        frameBorder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      >
+      </iframe>
+      {/* <iframe 
       src={props.url}
       height="100%"
       width="100%" 
-      allowfullscreen="true"></iframe>
+      allowFullScreen="true"></iframe> */}
+     <span className="text-center card_title">{props.title}</span>
     </div>
   );
-}
+};
 
 export default Card;
