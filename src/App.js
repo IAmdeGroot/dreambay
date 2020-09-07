@@ -112,32 +112,32 @@ function App() {
 
           {/* <h1 className="big-title translate" data-speed="0.1">Discover.</h1> */}
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src={logo} className="big-title translate" data-speed="-0.7" />
+            <img src={logo} className="big-title translate" data-speed="-0.8" />
           </div>
 
           <img
             src={moln1}
             className="person translate responsive-width"
-            data-speed="0.1"
+            data-speed="0"
             alt=""
           />
           {/* Not higher than 0.2 */}
           <img
             src={moln2}
             className="mountain1 translate responsive-width"
-            data-speed="0.2"
+            data-speed="-0.5"
             alt=""
           />
           <img
             src={moln3}
             className="mountain2 translate responsive-width"
-            data-speed="-0.5"
+            data-speed="-0.7"
             alt=""
           />
           <img
             src={moln4}
             className="mountain3 translate responsive-width"
-            data-speed="-0.9"
+            data-speed="-1.05"
             alt=""
           />
           {/* <img src="img/mountain_3_00000.png" className="mountain4 translate" data-speed="-0.25" alt=""/> */}
