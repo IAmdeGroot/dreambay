@@ -14,10 +14,15 @@ import cloud3 from "./assets/cloud3.png";
 import cloud4 from "./assets/cloud4.png";
 
 import sky2 from "./assets2/Background.png";
-import moln1 from "./assets2/moln_1.png";
-import moln2 from "./assets2/moln_2.png";
-import moln3 from "./assets2/moln_3.png";
-import moln4 from "./assets2/moln_4.png";
+// import moln1 from "./assets2/moln_1.png";
+// import moln2 from "./assets2/moln_2.png";
+// import moln3 from "./assets2/moln_3.png";
+// import moln4 from "./assets2/moln_4.png";
+
+import moln1 from "./assets3/moln_1_gray_00000.png";
+import moln2 from "./assets3/moln_2__00000.png";
+import moln3 from "./assets3/moln_3_00000.png";
+import moln4 from "./assets3/moln_4_00000.png";
 
 import MainSection from "./MainSection";
 import urlAnimationData from "./urlAnimationData.json";
