@@ -1,20 +1,17 @@
 import React from "react";
-import css from "./css/footer.css";
+import "./css/footer.css";
+import logo from "./assets/logowhite.png";
 
 const Footer = () => {
   return (
-    
-    <div className="container">
-    <footer class="page-footer font-small blue">
-    
-      <div class="footer-copyright text-center py-3">
-          <a style={{color: "#414141"}} href="mailto: gustav@dreambay.se">gustav@dreambay.se</a>
-      </div>
-     
-    
-    </footer>
+    <div className="footer">
+      <img className="img-fluid footer-img" alt="dreambay" src={logo}></img>
+      <a style={{color: "white"}} className="footer-link" href="mailto: gustav@dreambay.se">
+        gustav@dreambay.se
+      </a>
+      <a style={{color: "white"}} className="footer-link" href="phoneto:0703912946">0703912946</a>
+      <span className="small mt-2">Website by Johan de Groot</span>
     </div>
-    
   );
 };
 
