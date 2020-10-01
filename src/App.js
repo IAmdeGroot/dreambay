@@ -13,11 +13,11 @@ import lightCloud2 from "./assets3/lightCloud2.png";
 import lightCloud3 from "./assets3/lightCloud3.png";
 import lightCloud4 from "./assets3/lightCloud4.png";
 
-import darkSky from "./assets4/Background.png";
-import darkCloud1 from "./assets4/Moln_1.png";
-import darkCloud2 from "./assets4/Moln_2.png";
-import darkCloud3 from "./assets4/Moln_3.png";
-import darkCloud4 from "./assets4/Moln_4.png";
+import darkSky from "./assets4/Lager_5.png";
+import darkCloud1 from "./assets4/Lager_1.png";
+import darkCloud2 from "./assets4/Lager_2.png";
+import darkCloud3 from "./assets4/Lager_3.png";
+import darkCloud4 from "./assets4/Lager_4.png";
 //import logo from "./assets4/Logga.png";
 import Typist from "react-typist";
 import "./App.scss";
@@ -115,7 +115,7 @@ function App() {
           </nav>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src={logo} alt="dreambay" className="big-title translate" data-speed="-0.8" />
+            <img src={logo} alt="dreambay" className="big-title translate" data-speed="-0.5" />
           </div>
 
           <img
@@ -140,7 +140,7 @@ function App() {
           <img
             src={cloud4}
             className="mountain3 translate responsive-width"
-            data-speed="-1.05"
+            data-speed="-0.6"
             alt=""
           />
 

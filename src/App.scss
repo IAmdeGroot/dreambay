@@ -317,10 +317,16 @@ iframe {
   }
 }
 
-@media(min-width: 1900px) {
+@media(min-width: 1px) {
   .responsive-width {
-    width: 100%;
+    height: 150%;
   }
+}
+
+@media(min-width: 1950px) {
+    .responsive-width {
+        width:100%;
+    }
 }
 
 @media(min-width: 1300px) {
