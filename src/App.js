@@ -13,11 +13,11 @@ import lightCloud2 from "./assets3/lightCloud2.png";
 import lightCloud3 from "./assets3/lightCloud3.png";
 import lightCloud4 from "./assets3/lightCloud4.png";
 
-import darkSky from "./assets4/Lager_5.png";
-import darkCloud1 from "./assets4/Lager_1.png";
-import darkCloud2 from "./assets4/Lager_2.png";
-import darkCloud3 from "./assets4/Lager_3.png";
-import darkCloud4 from "./assets4/Lager_4.png";
+import darkSky from "./assets4/Background.png";
+import darkCloud1 from "./assets4/Moln_1.png";
+import darkCloud2 from "./assets4/Moln_2.png";
+import darkCloud3 from "./assets4/Moln_3.png";
+import darkCloud4 from "./assets4/Moln_4.png";
 //import logo from "./assets4/Logga.png";
 import Typist from "react-typist";
 import "./App.scss";
@@ -153,6 +153,50 @@ function App() {
         </header>
 
         <section>
+          <div className="container">
+            <div className="col-12 p-4 info-box">
+              <div className="info-box-header">
+              OM DREAMBAY
+              </div>
+              <div className="col-xs-12 col-md-8 info-box-content">
+                  Dreambay är en kreativ studio som lever för att berätta och
+                  beröra med hjälp av rörliga bilder. Med film, design, VFX, 3D
+                  och 2D-animation kan vi göra just det. Studion ligger ute på
+                  Östergötlands landsbygd med utrymme till alla tänkbara idéer.
+                  Vi har möjlighet att leverera filmer i hög nivå till hela
+                  Sverige.
+              </div>
+            </div>
+            <div className="col-12 p-4 info-box">
+              <div className="info-box-header">
+              SHOWCASE
+              </div>
+              <div className="col-xs-12 col-md-8 info-box-content">
+              <div className="col-lg-12 col-md-12 col-xs-12 custom_center">
+                  <Card url="https://player.vimeo.com/video/459658560"></Card>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 p-4 info-box">
+              <div className="info-box-header">
+              JUST NU
+              </div>
+              <div className="col-xs-12 col-md-8 info-box-content">
+                  Dreambay är en kreativ studio som lever för att berätta och
+                  beröra med hjälp av rörliga bilder. Med film, design, VFX, 3D
+                  och 2D-animation kan vi göra just det. Studion ligger ute på
+                  Östergötlands landsbygd med utrymme till alla tänkbara idéer.
+                  Vi har möjlighet att leverera filmer i hög nivå till hela
+                  Sverige.
+              </div>
+            </div>
+          </div>
+
+          
+           
+         
+          
+
           {/* <div className="shadow"></div> */}
           <div className="container">
             <div className="content opacity mb-2">
@@ -228,7 +272,7 @@ function App() {
                 </p>
               </div>
               <div className="col-lg-6">
-                <img src={project} className="img-fluid mt-4"></img>
+                {/* <img src={project} className="img-fluid mt-4"></img> */}
               </div>
             </div>
           </div>

@@ -12,7 +12,7 @@ body {
 }
 
 .translate {
-    -webkit-transition: transform 0.1s ease;
+    -webkit-transition: transform 0.1s linear;
 }
 
 // @media screen and (max-width: 767px) {
@@ -20,6 +20,53 @@ body {
 //         transform: none !important;
 //     }
 // }
+
+
+.info-box {
+    background: url("./assets4/Moln_1.png");
+    object-fit: contain;
+    max-height: 100px;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 10px 0px 10px 0px !important;
+    transition-property: max-height;
+    transition-duration: 350ms;
+    transition-timing-function: ease-in;
+   
+}
+
+.info-box:hover {
+     max-height: 1000px;
+    .info-box-content {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.info-box-header {
+    font-weight: 700;
+    font-size: 40px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 450px) {
+    .info-box-header {
+        font-size: 20px;
+    }
+}
+
+.info-box-content {
+    opacity: 0;
+    font-size: 16px;
+    padding: 10px;
+    background: white;
+    border-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    transition: visibility 0s, opacity 0.5s linear;
+    overflow: hidden;
+   
+}
 
 .container{
     max-width: 70rem;
@@ -317,11 +364,11 @@ iframe {
   }
 }
 
-@media(min-width: 1px) {
-  .responsive-width {
-    height: 150%;
-  }
-}
+// @media(min-width: 1px) {
+//   .responsive-width {
+//     height: 150%;
+//   }
+// }
 
 @media(min-width: 1950px) {
     .responsive-width {
