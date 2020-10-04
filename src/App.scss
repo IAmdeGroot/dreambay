@@ -23,7 +23,7 @@ body {
 
 
 .info-box {
-    background: url("./assets4/Moln_1.png");
+    background: lightgray;
     object-fit: contain;
     max-height: 100px;
     flex-direction: column;
@@ -46,7 +46,7 @@ body {
 .info-box-header {
     font-weight: 700;
     font-size: 40px;
-    padding: 10px;
+    //padding: 10px;
 }
 
 @media screen and (max-width: 450px) {
@@ -58,14 +58,21 @@ body {
 .info-box-content {
     opacity: 0;
     font-size: 16px;
-    padding: 10px;
+    padding: 20px;
     background: white;
     border-color: white;
     border-radius: 15px;
     border-style: solid;
     transition: visibility 0s, opacity 0.5s linear;
     overflow: hidden;
+    margin-top: 10px;
    
+}
+
+.info-box-movie {
+    padding: 0;
+    background: none;
+    border: none;
 }
 
 .container{
@@ -272,7 +279,7 @@ section .container > *{
 }
 
 .color-title {
-    color: white !important;
+    color: #000000 !important;
 }
 
 .border{
@@ -321,8 +328,8 @@ section .container > *{
 
 .color_section {
   //background: #ac342c;
-  background: #000000;
-  color: white;
+  background: white;
+  color: #000000;
 }
 
 iframe {
@@ -364,11 +371,12 @@ iframe {
   }
 }
 
-// @media(min-width: 1px) {
-//   .responsive-width {
-//     height: 150%;
-//   }
-// }
+@media(min-width: 1px) {
+  .responsive-width {
+    height: 150%;
+    object-fit: cover;
+  }
+}
 
 @media(min-width: 1950px) {
     .responsive-width {
