@@ -12,7 +12,8 @@ body {
 }
 
 .translate {
-  //  -webkit-transition: transform 0.1s linear;
+    -webkit-transition: transform 0.1s linear;
+    transition: transform 0.1s linear;
 }
 
 // @media screen and (max-width: 767px) {
