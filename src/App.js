@@ -31,6 +31,10 @@ function App() {
   const [cloud4, setCloud4] = useState(darkCloud4);
   const [sky, setSky] = useState(darkSky);
   const [sunLogo, setSunLogo] = useState(sun);
+  const [firstBoxVisible, setFirstBoxVisible] = useState(false);
+  const [secondBoxVisible, setSecondBoxVisible] = useState(false);
+  const [thirdBoxVisible, setThirdBoxVisible] = useState(false);
+  const [sectionVisible, setSectionVisible] = useState(false);
 
   const cursor = {
     show: true,
@@ -50,8 +54,42 @@ function App() {
         let speed = element.dataset.speed;
         element.style.transform = `translateY(${scroll * -speed}px)`;
       });
+
+      let isVisible = isInViewport(document.querySelector(".info-box-header"));
+
+      if (isVisible) {
+        setSectionVisible(true);
+      }
     });
   }
+
+  const isInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+
+    if (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const onFirstBoxClick = () => {
+    setFirstBoxVisible(!firstBoxVisible);
+  };
+
+  const onSecondBoxClick = () => {
+    setSecondBoxVisible(!secondBoxVisible);
+  };
+
+  const onThirdBoxClick = () => {
+    setThirdBoxVisible(!thirdBoxVisible);
+  };
 
   const changeViewMode = () => {
     switch (viewMode) {
@@ -110,12 +148,21 @@ function App() {
               <h3 className="logo">
                 dream<span>bay</span>
               </h3>
-              <img src={sunLogo} className="hamburger-menu" onClick={() => changeViewMode()}/>
+              <img
+                src={sunLogo}
+                className="hamburger-menu"
+                onClick={() => changeViewMode()}
+              />
             </div>
           </nav>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src={logo} alt="dreambay" className="big-title translate" data-speed="-0.5" />
+            <img
+              src={logo}
+              alt="dreambay"
+              className="big-title translate"
+              data-speed="-0.5"
+            />
           </div>
 
           <img
@@ -152,53 +199,105 @@ function App() {
           />
         </header>
 
-        <section>
-          <div className="container">
-            <div className="col-12 p-4 info-box">
-              <div className="info-box-header">
-              OM DREAMBAY
-              </div>
-              <div className="col-xs-12 col-md-8 info-box-content">
-                  Dreambay är en kreativ studio som lever för att berätta och
-                  beröra med hjälp av rörliga bilder. Med film, design, VFX, 3D
-                  och 2D-animation kan vi göra just det. Studion ligger ute på
-                  Östergötlands landsbygd med utrymme till alla tänkbara idéer.
-                  Vi har möjlighet att leverera filmer i hög nivå till hela
-                  Sverige.
-              </div>
+        <section className="visible-section">
+          <div
+            className={`col-12 p-4 gray-background  info-box ${
+              firstBoxVisible ? "info-box-active" : ""
+            }`}
+            onClick={onFirstBoxClick}
+          >
+            <div className="info-box-header">
+              {sectionVisible ? (
+                <Typist
+                  className="text"
+                  startDelay={20}
+                  stdTypingDelay={40}
+                  avgTypingDelay={80}
+                  cursor={cursor}
+                >
+                  OM DREAMBAY
+                </Typist>
+              ) : (
+                ""
+              )}
             </div>
-            <div className="col-12 p-4 info-box">
-              <div className="info-box-header">
-              SHOWCASE
+            <div className="col-xs-12 col-md-8 info-box-content">
+              Dreambay är en kreativ studio som lever för att berätta och beröra
+              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
+              2D-animation kan vi göra just det. Studion ligger ute på
+              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
+              har möjlighet att leverera filmer i hög nivå till hela Sverige.
+            </div>
+          </div>
+          <div
+            className={`col-12 p-4 red-background  info-box ${
+              secondBoxVisible ? "info-box-active" : ""
+            }`}
+            onClick={onSecondBoxClick}
+          >
+            <div className="info-box-header">
+            {sectionVisible ? (
+                <Typist
+                  className="text"
+                  startDelay={22}
+                  stdTypingDelay={40}
+                  avgTypingDelay={70}
+                  cursor={cursor}
+                >
+                  ERFARENHET
+                </Typist>
+              ) : (
+                ""
+              )}
               </div>
-              <div className="col-xs-12 col-md-8 info-box-content info-box-movie">
+            <div className="col-xs-12 col-md-8 info-box-content">
+              Dreambay är en kreativ studio som lever för att berätta och beröra
+              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
+              2D-animation kan vi göra just det. Studion ligger ute på
+              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
+              har möjlighet att leverera filmer i hög nivå till hela Sverige.
+            </div>
+          </div>
+          <div
+            className={`col-12 orange-background p-4  info-box ${
+              thirdBoxVisible ? "info-box-active" : ""
+            }`}
+            onClick={onThirdBoxClick}
+          >
+            <div className="info-box-header">
+            {sectionVisible ? (
+                <Typist
+                  className="text"
+                  startDelay={30}
+                  stdTypingDelay={40}
+                  avgTypingDelay={110}
+                  cursor={cursor}
+                >
+                  VI GÖR FILM
+                </Typist>
+              ) : (
+                ""
+              )}
+              </div>
+            <div className="col-xs-12 col-md-8 info-box-content">
+              Dreambay är en kreativ studio som lever för att berätta och beröra
+              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
+              2D-animation kan vi göra just det. Studion ligger ute på
+              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
+              har möjlighet att leverera filmer i hög nivå till hela Sverige.
+            </div>
+          </div>
+
+          <div className="container mb-4 opacity" data-speed="">
+            <div className="row m-0">
               <div className="col-lg-12 col-md-12 col-xs-12 custom_center">
-                  <Card url="https://player.vimeo.com/video/459658560"></Card>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 p-4 info-box">
-              <div className="info-box-header">
-              JUST NU
-              </div>
-              <div className="col-xs-12 col-md-8 info-box-content">
-                  Dreambay är en kreativ studio som lever för att berätta och
-                  beröra med hjälp av rörliga bilder. Med film, design, VFX, 3D
-                  och 2D-animation kan vi göra just det. Studion ligger ute på
-                  Östergötlands landsbygd med utrymme till alla tänkbara idéer.
-                  Vi har möjlighet att leverera filmer i hög nivå till hela
-                  Sverige.
+                <Card url="https://player.vimeo.com/video/459658560"></Card>
               </div>
             </div>
           </div>
 
-          
-           
-         
-          
-
           {/* <div className="shadow"></div> */}
-          
+
           {/* <div className="container">
             <div className="content opacity mb-2">
               <div className="col-12">
@@ -228,14 +327,8 @@ function App() {
             </div>
             </div>
 
-            <div className="container mb-4 opacity" data-speed="">
-              <div className="row m-0">
-                <div className="col-lg-12 col-md-12 col-xs-12 custom_center">
-                  <Card url="https://player.vimeo.com/video/459658560"></Card>
-                </div>
-              </div>
-            </div> */}
-          
+             */}
+
           <div className="color_section">
             <div className="container">
               <div className="row opacity mb-2">
@@ -247,9 +340,17 @@ function App() {
                   <p className="text">
                     Vill du sammarbeta eller har du en idé eller ett projekt du
                     vill se framför dig? <br /> Hör av dig så bollar vi vidare
-                    hur vi kan förverkliga den. <br/> <br/>
-                    <a style={{color: "white"}} href="mailto:gustav@dreambay.se">gustav@dreambay.se</a> <br/>
-                    <a style={{color: "white"}} href="phoneto:0703912946">0703912946</a>
+                    hur vi kan förverkliga den. <br /> <br />
+                    <a
+                      style={{ color: "white" }}
+                      href="mailto:gustav@dreambay.se"
+                    >
+                      gustav@dreambay.se
+                    </a>{" "}
+                    <br />
+                    <a style={{ color: "white" }} href="phoneto:0703912946">
+                      0703912946
+                    </a>
                   </p>
                 </div>
               </div>
