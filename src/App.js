@@ -210,9 +210,9 @@ function App() {
               {sectionVisible ? (
                 <Typist
                   className="text"
-                  startDelay={20}
+                  startDelay={222}
                   stdTypingDelay={40}
-                  avgTypingDelay={80}
+                  avgTypingDelay={110}
                   cursor={cursor}
                 >
                   OM DREAMBAY
@@ -239,9 +239,9 @@ function App() {
             {sectionVisible ? (
                 <Typist
                   className="text"
-                  startDelay={22}
+                  startDelay={444}
                   stdTypingDelay={40}
-                  avgTypingDelay={70}
+                  avgTypingDelay={110}
                   cursor={cursor}
                 >
                   ERFARENHET
@@ -268,7 +268,7 @@ function App() {
             {sectionVisible ? (
                 <Typist
                   className="text"
-                  startDelay={30}
+                  startDelay={666}
                   stdTypingDelay={40}
                   avgTypingDelay={110}
                   cursor={cursor}
