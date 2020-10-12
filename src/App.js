@@ -1,29 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Card from "./card";
-import Footer from "./footer";
-import project from "./assets/camera.jpg";
-import yellowLogo from "./assets/logo.png";
 import darkLogo from "./assets4/logoDark.png";
-import sunCloud from "./assets4/sunCloud.png";
 import sun from "./assets4/sun.png";
-
-import lightSky from "./assets2/lightSky.png";
-import lightCloud1 from "./assets3/lightCloud1.png";
-import lightCloud2 from "./assets3/lightCloud2.png";
-import lightCloud3 from "./assets3/lightCloud3.png";
-import lightCloud4 from "./assets3/lightCloud4.png";
-
-import darkSky from "./assets4/Lager_1.png";
-import darkCloud1 from "./assets4/Lager_2.png";
-import darkCloud2 from "./assets4/Lager_3.png";
-import darkCloud3 from "./assets4/Lager_4.png";
-import darkCloud4 from "./assets4/Lager_5.png";
-//import logo from "./assets4/Logga.png";
-import Typist from "react-typist";
+import darkSky from "./assets4/Background.png";
+import darkCloud1 from "./assets4/Lager_1.png";
+import darkCloud2 from "./assets4/Lager_2.png";
+import darkCloud3 from "./assets4/Lager_3.png";
+import darkCloud4 from "./assets4/Lager_4.png";
 import "./App.scss";
 
 function App() {
-  const [viewMode, setViewMode] = useState("dark");
   const [logo, setLogo] = useState(darkLogo);
   const [cloud1, setCloud1] = useState(darkCloud1);
   const [cloud2, setCloud2] = useState(darkCloud2);
@@ -34,15 +20,6 @@ function App() {
   const [firstBoxVisible, setFirstBoxVisible] = useState(false);
   const [secondBoxVisible, setSecondBoxVisible] = useState(false);
   const [thirdBoxVisible, setThirdBoxVisible] = useState(false);
-  const [sectionVisible, setSectionVisible] = useState(false);
-
-  const cursor = {
-    show: true,
-    blink: true,
-    element: "|",
-    hideWhenDone: true,
-    hideWhenDoneDelay: 1000,
-  };
 
   function castParallax() {
     const translate = document.querySelectorAll(".translate");
@@ -54,30 +31,8 @@ function App() {
         let speed = element.dataset.speed;
         element.style.transform = `translateY(${scroll * -speed}px)`;
       });
-
-      let isVisible = isInViewport(document.querySelector(".info-box-header"));
-
-      if (isVisible) {
-        setSectionVisible(true);
-      }
     });
   }
-
-  const isInViewport = (el) => {
-    const rect = el.getBoundingClientRect();
-
-    if (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  };
 
   const onFirstBoxClick = () => {
     setFirstBoxVisible(!firstBoxVisible);
@@ -91,53 +46,10 @@ function App() {
     setThirdBoxVisible(!thirdBoxVisible);
   };
 
-  const changeViewMode = () => {
-    switch (viewMode) {
-      case "dark":
-        setViewMode("light");
-        break;
-      case "light":
-        setViewMode("dark");
-        break;
-    }
-  };
-
   useEffect(() => {
     window.scrollTo(0, 0);
     castParallax();
   }, []);
-
-  useEffect(() => {
-    switch (viewMode) {
-      case "dark":
-        setCloud1(darkCloud1);
-        setCloud2(darkCloud2);
-        setCloud3(darkCloud3);
-        setCloud4(darkCloud4);
-        setSky(darkSky);
-        setLogo(darkLogo);
-        setSunLogo(sun);
-        break;
-      case "light":
-        setCloud1(lightCloud1);
-        setCloud2(lightCloud2);
-        setCloud3(lightCloud3);
-        setCloud4(lightCloud4);
-        setSky(lightSky);
-        setLogo(yellowLogo);
-        setSunLogo(sunCloud);
-        break;
-      default:
-        setCloud1(darkCloud1);
-        setCloud2(darkCloud2);
-        setCloud3(darkCloud3);
-        setCloud4(darkCloud4);
-        setSky(darkSky);
-        setLogo(darkLogo);
-        setSunLogo(sun);
-        break;
-    }
-  }, [viewMode]);
 
   return (
     <>
@@ -148,11 +60,11 @@ function App() {
               <h3 className="logo">
                 dream<span>bay</span>
               </h3>
-              <img
+              {/* <img
                 src={sunLogo}
                 className="hamburger-menu"
                 onClick={() => changeViewMode()}
-              />
+              /> */}
             </div>
           </nav>
 
@@ -200,187 +112,73 @@ function App() {
         </header>
 
         <section className="visible-section">
-          <div
-            className={`col-12 p-4 gray-background  info-box ${
-              firstBoxVisible ? "info-box-active" : ""
-            }`}
-            onClick={onFirstBoxClick}
-          >
-            <div className="info-box-header">
-              {sectionVisible ? (
-                <Typist
-                  className="text"
-                  startDelay={222}
-                  stdTypingDelay={40}
-                  avgTypingDelay={110}
-                  cursor={cursor}
-                >
-                  OM DREAMBAY
-                </Typist>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="col-xs-12 col-md-8 info-box-content">
-              Dreambay är en kreativ studio som lever för att berätta och beröra
-              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
-              2D-animation kan vi göra just det. Studion ligger ute på
-              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
-              har möjlighet att leverera filmer i hög nivå till hela Sverige.
-            </div>
-          </div>
-          <div
-            className={`col-12 p-4 red-background  info-box ${
-              secondBoxVisible ? "info-box-active" : ""
-            }`}
-            onClick={onSecondBoxClick}
-          >
-            <div className="info-box-header">
-            {sectionVisible ? (
-                <Typist
-                  className="text"
-                  startDelay={444}
-                  stdTypingDelay={40}
-                  avgTypingDelay={110}
-                  cursor={cursor}
-                >
-                  ERFARENHET
-                </Typist>
-              ) : (
-                ""
-              )}
-              </div>
-            <div className="col-xs-12 col-md-8 info-box-content">
-              Dreambay är en kreativ studio som lever för att berätta och beröra
-              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
-              2D-animation kan vi göra just det. Studion ligger ute på
-              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
-              har möjlighet att leverera filmer i hög nivå till hela Sverige.
-            </div>
-          </div>
-          <div
-            className={`col-12 orange-background p-4  info-box ${
-              thirdBoxVisible ? "info-box-active" : ""
-            }`}
-            onClick={onThirdBoxClick}
-          >
-            <div className="info-box-header">
-            {sectionVisible ? (
-                <Typist
-                  className="text"
-                  startDelay={666}
-                  stdTypingDelay={40}
-                  avgTypingDelay={110}
-                  cursor={cursor}
-                >
-                  VI GÖR FILM
-                </Typist>
-              ) : (
-                ""
-              )}
-              </div>
-            <div className="col-xs-12 col-md-8 info-box-content">
-              Dreambay är en kreativ studio som lever för att berätta och beröra
-              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
-              2D-animation kan vi göra just det. Studion ligger ute på
-              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
-              har möjlighet att leverera filmer i hög nivå till hela Sverige.
-            </div>
-          </div>
-
-          <div className="container mb-4 opacity" data-speed="">
-            <div className="row m-0">
+          <div className="col-12 p-4 gray-background">
+            <div className="info-box-header">ERARENHET</div>
+            <div className="custom_line"></div>
+            <div className="container">
               <div className="col-lg-12 col-md-12 col-xs-12 custom_center">
                 <Card url="https://player.vimeo.com/video/459658560"></Card>
               </div>
             </div>
           </div>
-
-          {/* <div className="shadow"></div> */}
-
-          {/* <div className="container">
-            <div className="content opacity mb-2">
-              <div className="col-12">
-                <h3 className="title">
-                  <Typist
-                    className="text"
-                    startDelay={4000}
-                    stdTypingDelay={20}
-                    avgTypingDelay={100}
-                    cursor={cursor}
-                  >
-                    <span> Animtion </span>
-                    <Typist.Backspace count={7} delay={200} />
-                    <span>imation och VFX </span>
-                  </Typist>
-                </h3>
-
-                <p className="text">
-                  Dreambay är en kreativ studio som lever för att berätta och
-                  beröra med hjälp av rörliga bilder. Med film, design, VFX, 3D
-                  och 2D-animation kan vi göra just det. Studion ligger ute på
-                  Östergötlands landsbygd med utrymme till alla tänkbara idéer.
-                  Vi har möjlighet att leverera filmer i hög nivå till hela
-                  Sverige.
-                </p>
-              </div>
-            </div>
-            </div>
-
-             */}
-
-          <div className="color_section">
-            <div className="container">
-              <div className="row opacity mb-2">
-                <div className="col-12">
-                  <h3 className="title color-title">
-                    Kontakta oss
-                    <div className="border border_two"></div>
-                  </h3>
-                  <p className="text">
-                    Vill du sammarbeta eller har du en idé eller ett projekt du
-                    vill se framför dig? <br /> Hör av dig så bollar vi vidare
-                    hur vi kan förverkliga den. <br /> <br />
-                    <a
-                      style={{ color: "white" }}
-                      href="mailto:gustav@dreambay.se"
-                    >
-                      gustav@dreambay.se
-                    </a>{" "}
-                    <br />
-                    <a style={{ color: "white" }} href="phoneto:0703912946">
-                      0703912946
-                    </a>
-                  </p>
-                </div>
-              </div>
+          <div
+            className={`col-12 p-4 red-background  info-box ${
+              firstBoxVisible ? "info-box-active" : ""
+            }`}
+            onClick={onFirstBoxClick}
+          >
+            <div className="info-box-header">OM DREAMBAY</div>
+            <div className="custom_line info-box-content"></div>
+            <div className="col-xs-12 col-md-8 info-box-content">
+              Dreambay är en kreativ studio som lever för att berätta och beröra
+              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
+              2D-animation kan vi göra just det. Studion ligger ute på
+              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
+              har möjlighet att leverera filmer i hög nivå till hela Sverige.
             </div>
           </div>
 
-          {/* <div className="container">
-            <div className="row align-items-center content opacity mb-2">
-              <div className="col-lg-6">
-                <h3 className="title">
-                  Projekt just nu
-                  <div className="border border_three"></div>
-                </h3>
-                <p className="text">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Eaque officiis quos expedita ipsa, a quidem inventore
-                  voluptates debitis accusamus tenetur qui et voluptas dicta,
-                  culpa earum, doloribus odio consectetur consequuntur soluta
-                  quasi nobis! Deserunt voluptatum reiciendis iure expedita
-                  sequi quisquam laboriosam temporibus exercitationem.
-                </p>
-              </div>
-              <div className="col-lg-6">
+          <div
+            className={`col-12 p-4 orange-background  info-box ${
+              secondBoxVisible ? "info-box-active" : ""
+            }`}
+            onClick={onSecondBoxClick}
+          >
+            <div className="info-box-header">VI GÖR FILM</div>
+            <div className="custom_line info-box-content"></div>
+            <div className="col-xs-12 col-md-8 info-box-content">
+              Dreambay är en kreativ studio som lever för att berätta och beröra
+              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
+              2D-animation kan vi göra just det. Studion ligger ute på
+              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
+              har möjlighet att leverera filmer i hög nivå till hela Sverige.
+            </div>
+          </div>
+
+          <div className="col-12 beige-background p-4 d-flex align-items-center flex-column ">
+            <div className="info-box-header">KONTAKTA OSS</div>
+            <div className="custom_line"></div>
+            <div
+              className="col-xs-12 col-md-8 text-center"
+              style={{ padding: "20px" }}
+            >
+              Vill du sammarbeta eller har du en idé eller ett projekt du vill
+              se framför dig? Hör av dig så bollar vi vidare hur vi kan
+              förverkliga den.
+              <div className="col d-flex flex-column my-2 mx-0">
+                <a
+                  style={{ color: "#AC390C" }}
+                  href="mailto:gustav@dreambay.se"
+                >
+                  gustav@dreambay.se
+                </a>
+                <a style={{ color: "#AC390C" }} href="phoneto:0703912946">
+                  0703912946
+                </a>
               </div>
             </div>
-          </div> */}
-
-          {/* <CustomModal isOpen={modalIsOpen} closeModal={closeModal}></CustomModal> */}
+          </div>
         </section>
-        <Footer></Footer>
       </div>
     </>
   );
