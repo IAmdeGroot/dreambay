@@ -116,7 +116,7 @@ function App() {
             <div className="info-box-header">ERARENHET</div>
             <div className="custom_line"></div>
             <div className="container">
-              <div className="col-lg-12 col-md-12 col-xs-12 custom_center">
+              <div className="col-lg-12 col-md-12 col-xs-12 custom_center mx-0 my-4">
                 <Card url="https://player.vimeo.com/video/459658560"></Card>
               </div>
             </div>
