@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import Card from "./card";
 import darkLogo from "./assets4/logoDark.png";
 import sun from "./assets4/sun.png";
-import darkSky from "./assets4/Background.png";
-import darkCloud1 from "./assets4/Lager_1.png";
-import darkCloud2 from "./assets4/Lager_2.png";
-import darkCloud3 from "./assets4/Lager_3.png";
-import darkCloud4 from "./assets4/Lager_4.png";
+import darkSky from "./assets5/Background.png";
+import darkCloud1 from "./assets5/Lager_1.png";
+import darkCloud2 from "./assets5/Lager_2.png";
+import darkCloud3 from "./assets5/Lager_3.png";
+import darkCloud4 from "./assets5/Lager_4.png";
 import "./App.scss";
+import flyingGif from "./assets5/2D_Process.gif";
+import houseGif from "./assets5/3D_Process.gif";
+import vfxGif from "./assets5/VFX_Process.gif";
 
 function App() {
   const [logo, setLogo] = useState(darkLogo);
@@ -29,7 +32,12 @@ function App() {
 
       translate.forEach((element) => {
         let speed = element.dataset.speed;
-        element.style.transform = `translateY(${scroll * -speed}px)`;
+        //element.style.transform = `translateY(${scroll * -speed}px)`;
+        element.style.webkitTransform = `translateY(${scroll * -speed}px)`;
+        // element.style.MozTransform = `translateY(${scroll * -speed}px)`;
+        // element.style.msTransform = `translateY(${scroll * -speed}px)`;
+        // element.style.OTransform = `translateY(${scroll * -speed}px)`;
+        //element.style.transform = `translateY(${scroll * -speed}px)`;
       });
     });
   }
@@ -112,33 +120,52 @@ function App() {
         </header>
 
         <section className="visible-section">
-          <div className="col-12 p-4 gray-background">
+          <div className="col-12 p-0 red-background">
             <div className="info-box-header">ERARENHET</div>
-            <div className="custom_line"></div>
-            <div className="container">
-              <div className="col-lg-12 col-md-12 col-xs-12 custom_center mx-0 my-4">
-                <Card url="https://player.vimeo.com/video/459658560"></Card>
+            <div className="beige-background">
+              <div className="container">
+                <div className="white-background p-3 no-mobile-padding">
+                  <div className="col-lg-12 col-md-12 col-xs-12 custom_center py-3">
+                    <Card url="https://player.vimeo.com/video/459658560"></Card>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div
-            className={`col-12 p-4 red-background  info-box ${
+            className={`col-12 p-4 blue-background info-box ${
               firstBoxVisible ? "info-box-active" : ""
             }`}
             onClick={onFirstBoxClick}
           >
-            <div className="info-box-header">OM DREAMBAY</div>
-            <div className="custom_line info-box-content"></div>
-            <div className="col-xs-12 col-md-8 info-box-content">
-              Dreambay är en kreativ studio som lever för att berätta och beröra
-              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
-              2D-animation kan vi göra just det. Studion ligger ute på
-              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
-              har möjlighet att leverera filmer i hög nivå till hela Sverige.
+            <div className="info-box-header">VI GÖR FILM</div>
+            <div className="col-xs-12 col-md-8 info-box-content white-background blue-text">
+              Dreambay är en kreativ studio som kombinerar design, animation och
+              film för att leverera rörligt material med stark personlighet. Med
+              en öppen och ärlig kundkontakt ser vi till att ro dina drömmar i
+              hamn. Med vår breda kunskap inom animation och unika studio på
+              östgöta landsbygd kan vi skapa det omöjliga. Vad vill du berätta
+              och hur vill du berätta det?
+            </div>
+            <div
+              className="row my-4 justify-content-center align-items-center"
+              style={{ maxWidth: "1000px" }}
+            >
+              <div className="custom-gif d-flex justify-content-center">
+                <img className="image-smaller-mobile" src={flyingGif} alt="2D"></img>
+              </div>
+
+              <div className="custom-gif d-flex justify-content-center">
+                <img className="image-smaller-mobile" src={houseGif} alt="3D"></img>
+              </div>
+
+              <div className="col-xs-12 d-flex justify-content-center">
+                <img className="image-smaller-mobile" src={vfxGif} alt="VFX"></img>
+              </div>
             </div>
           </div>
 
-          <div
+          {/* <div
             className={`col-12 p-4 orange-background  info-box ${
               secondBoxVisible ? "info-box-active" : ""
             }`}
@@ -153,28 +180,27 @@ function App() {
               Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
               har möjlighet att leverera filmer i hög nivå till hela Sverige.
             </div>
-          </div>
+          </div> */}
 
-          <div className="col-12 beige-background p-4 d-flex align-items-center flex-column ">
+          <div className="col-12 p-0 beige-background-2 ">
             <div className="info-box-header">KONTAKTA OSS</div>
             <div className="custom_line"></div>
-            <div
-              className="col-xs-12 col-md-8 text-center"
-              style={{ padding: "20px" }}
-            >
-              Vill du sammarbeta eller har du en idé eller ett projekt du vill
-              se framför dig? Hör av dig så bollar vi vidare hur vi kan
-              förverkliga den.
-              <div className="col d-flex flex-column my-2 mx-0">
-                <a
-                  style={{ color: "#AC390C" }}
-                  href="mailto:gustav@dreambay.se"
-                >
-                  gustav@dreambay.se
-                </a>
-                <a style={{ color: "#AC390C" }} href="phoneto:0703912946">
-                  0703912946
-                </a>
+            <div className="beige-background-3 text-center">
+              <div className="container">
+                Vill du sammarbeta eller har en idé eller ett projekt du vill se
+                framför dig. Hör av dig så bollar vi vidare hur vi kan
+                förverkliga dem.
+                <div className="col d-flex flex-column my-2 mx-0">
+                  <a
+                    style={{ color: "#AC390C" }}
+                    href="mailto:info@dreambay.se"
+                  >
+                    info@dreambay.se
+                  </a>
+                  <a style={{ color: "#AC390C" }} href="phoneto:0703912946">
+                    0703912946
+                  </a>
+                </div>
               </div>
             </div>
           </div>
