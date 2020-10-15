@@ -121,10 +121,10 @@ function App() {
 
         <section className="visible-section">
           <div className="col-12 p-0 red-background">
-            <div className="info-box-header">ERARENHET</div>
+            <div className="info-box-header">ERFARENHET</div>
             <div className="beige-background">
               <div className="container">
-                <div className="white-background p-3 no-mobile-padding">
+                <div className="p-3 no-mobile-padding">
                   <div className="col-lg-12 col-md-12 col-xs-12 custom_center py-3">
                     <Card url="https://player.vimeo.com/video/459658560"></Card>
                   </div>
@@ -139,7 +139,7 @@ function App() {
             onClick={onFirstBoxClick}
           >
             <div className="info-box-header">VI GÖR FILM</div>
-            <div className="col-xs-12 col-md-8 info-box-content white-background blue-text">
+            <div className="col-xs-12 col-md-8 info-box-content white-background blue-text" style={{maxWidth: "1000px"}}>
               Dreambay är en kreativ studio som kombinerar design, animation och
               film för att leverera rörligt material med stark personlighet. Med
               en öppen och ärlig kundkontakt ser vi till att ro dina drömmar i
@@ -188,7 +188,7 @@ function App() {
             <div className="beige-background-3 text-center">
               <div className="container">
                 Vill du sammarbeta eller har en idé eller ett projekt du vill se
-                framför dig. Hör av dig så bollar vi vidare hur vi kan
+                framför dig? Hör av dig så bollar vi vidare hur vi kan
                 förverkliga dem.
                 <div className="col d-flex flex-column my-2 mx-0">
                   <a
