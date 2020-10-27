@@ -11,6 +11,7 @@ import "./App.scss";
 import flyingGif from "./assets5/2D_Process.gif";
 import houseGif from "./assets5/3D_Process.gif";
 import vfxGif from "./assets5/VFX_Process.gif";
+import Footer from "./footer.js";
 
 function App() {
   const [logo, setLogo] = useState(darkLogo);
@@ -65,14 +66,6 @@ function App() {
         <header>
           <nav>
             <div className="container">
-              <h3 className="logo">
-                dream<span>bay</span>
-              </h3>
-              {/* <img
-                src={sunLogo}
-                className="hamburger-menu"
-                onClick={() => changeViewMode()}
-              /> */}
             </div>
           </nav>
 
@@ -124,7 +117,7 @@ function App() {
             <div className="info-box-header">ERFARENHET</div>
             <div className="beige-background">
               <div className="container">
-                <div className="p-3 no-mobile-padding">
+                <div className="p-3 m-0 no-mobile-padding">
                   <div className="col-lg-12 col-md-12 col-xs-12 custom_center py-3">
                     <Card url="https://player.vimeo.com/video/459658560"></Card>
                   </div>
@@ -132,55 +125,52 @@ function App() {
               </div>
             </div>
           </div>
-          <div
-            className={`col-12 p-4 blue-background info-box ${
-              firstBoxVisible ? "info-box-active" : ""
-            }`}
-            onClick={onFirstBoxClick}
-          >
+          <div className="col-12 p-0 blue-background">
             <div className="info-box-header">VI GÖR FILM</div>
-            <div className="col-xs-12 col-md-8 info-box-content white-background blue-text" style={{maxWidth: "1000px"}}>
-              Dreambay är en kreativ studio som kombinerar design, animation och
-              film för att leverera rörligt material med stark personlighet. Med
-              en öppen och ärlig kundkontakt ser vi till att ro dina drömmar i
-              hamn. Med vår breda kunskap inom animation och unika studio på
-              östgöta landsbygd kan vi skapa det omöjliga. Vad vill du berätta
-              och hur vill du berätta det?
-            </div>
-            <div
-              className="row my-4 justify-content-center align-items-center"
-              style={{ maxWidth: "1000px" }}
-            >
-              <div className="custom-gif d-flex justify-content-center">
-                <img className="image-smaller-mobile" src={flyingGif} alt="2D"></img>
-              </div>
+            <div className="d-flex justify-content-center align-items-center flex-column purple-background">
+              <div className="m-4">
+                <div
+                  className="col-xs-12 col-md-8 white-background blue-text container"
+                  style={{ maxWidth: "1000px" }}
+                >
+                  Dreambay är en kreativ studio som kombinerar design, animation
+                  och film för att leverera rörligt material med stark
+                  personlighet. Med en öppen och ärlig kundkontakt ser vi till
+                  att ro dina drömmar i hamn. Med vår breda kunskap inom
+                  animation och unika studio på östgöta landsbygd kan vi skapa
+                  det omöjliga. Vad vill du berätta och hur vill du berätta det?
+                </div>
+                <div
+                  className="row my-4 justify-content-center align-items-center"
+                  style={{ maxWidth: "1000px" }}
+                >
+                  <div className="custom-gif d-flex justify-content-center">
+                    <img
+                      className="image-smaller-mobile"
+                      src={flyingGif}
+                      alt="2D"
+                    ></img>
+                  </div>
 
-              <div className="custom-gif d-flex justify-content-center">
-                <img className="image-smaller-mobile" src={houseGif} alt="3D"></img>
-              </div>
+                  <div className="custom-gif d-flex justify-content-center">
+                    <img
+                      className="image-smaller-mobile"
+                      src={houseGif}
+                      alt="3D"
+                    ></img>
+                  </div>
 
-              <div className="col-xs-12 d-flex justify-content-center">
-                <img className="image-smaller-mobile" src={vfxGif} alt="VFX"></img>
+                  <div className="col-xs-12 d-flex justify-content-center">
+                    <img
+                      className="image-smaller-mobile"
+                      src={vfxGif}
+                      alt="VFX"
+                    ></img>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* <div
-            className={`col-12 p-4 orange-background  info-box ${
-              secondBoxVisible ? "info-box-active" : ""
-            }`}
-            onClick={onSecondBoxClick}
-          >
-            <div className="info-box-header">VI GÖR FILM</div>
-            <div className="custom_line info-box-content"></div>
-            <div className="col-xs-12 col-md-8 info-box-content">
-              Dreambay är en kreativ studio som lever för att berätta och beröra
-              med hjälp av rörliga bilder. Med film, design, VFX, 3D och
-              2D-animation kan vi göra just det. Studion ligger ute på
-              Östergötlands landsbygd med utrymme till alla tänkbara idéer. Vi
-              har möjlighet att leverera filmer i hög nivå till hela Sverige.
-            </div>
-          </div> */}
 
           <div className="col-12 p-0 beige-background-2 ">
             <div className="info-box-header">KONTAKTA OSS</div>
@@ -205,6 +195,7 @@ function App() {
             </div>
           </div>
         </section>
+        {/* <Footer></Footer> */}
       </div>
     </>
   );

@@ -1,11 +1,12 @@
 .footer {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    background: bisque;
-    color: black;
-    padding: 10px;
+    background:  #BE9D95;
+    color: #FFE8CF;
+    padding: 5px;
 }
 
 .footer-link {
@@ -13,5 +14,5 @@
 }
 
 .footer-img {
-    width: calc(80vh/5 + 40px);
+    width: calc(80vh/7 + 20px);
 }
